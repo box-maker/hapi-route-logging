@@ -45,7 +45,7 @@ For installation use the Node Package Manager (npm) or Yarn
 From npm directory:
 
 ```bash
-$ npm install -D hapi-route-logging
+$ npm install -D @box-maker/hapi-route-logging
 ```
 
 From source
@@ -61,7 +61,7 @@ $ npm install git+https://github.com/box-maker/hapi-route-logging.git
 From npm directory:
 
 ```bash
-$ yarn add -D hapi-route-logging
+$ yarn add -D @box-maker/hapi-route-logging
 ```
 
 From source
@@ -82,13 +82,13 @@ You can find complete examples inside the *examples* directory, both using **req
 Using *require*
 
 ```javascript
-const hapiRouteLogging = require('hapi-route-logging');
+const hapiRouteLogging = require('@box-maker/hapi-route-logging');
 ```
 
 Using *import* (Requires [Babel](https://babeljs.io/))
 
 ```javascript
-import hapiRouteLogging from 'hapi-route-logging';
+import hapiRouteLogging from '@box-maker/hapi-route-logging';
 ```
 
 ### Registration
