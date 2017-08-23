@@ -1,6 +1,6 @@
 {
   "name": "@box-maker/hapi-route-logging",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A simple plugin to print on screen the routes consulted, ideal during development.",
   "publishConfig": {
     "access": "public"
