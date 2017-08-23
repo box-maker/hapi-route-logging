@@ -1,5 +1,7 @@
 # hapi-route-logging
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/box-maker/hapi-route-logging.svg)](https://greenkeeper.io/)
+
 A simple plugin to print on screen the routes consulted, ideal during development.
 
 <p align="center">
