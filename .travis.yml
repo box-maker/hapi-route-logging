@@ -23,8 +23,6 @@ script:
   # - yarn test
   # - yarn run coverage
 
-after_success:
-
 deploy:
   - provider: npm
     email: "eliluminado00@gmail.com"
