@@ -1,0 +1,59 @@
+---
+- repositories:
+    - box-maker/hapi-route-logging
+  milestones:
+    - title: 1.0
+      state: open
+      description: Tasks to be completed before release first stable version
+    - title: 2.0
+      state: open
+      description: Place for future implementations
+  labels:
+    - name: 'Type: Bug'
+      color: 91ca55
+      state: present
+    - name: 'Type: Feature'
+      color: 91ca55
+      state: present
+    - name: 'Type: Duplicate'
+      color: 91ca55
+      state: present
+    - name: 'Type: Question'
+      color: 91ca55
+      state: present
+    - name: 'Type: Invalid'
+      color: 91ca55
+      state: present
+    - name: 'Priority: Critical'
+      color: ee3f46
+      state: present
+    - name: 'Priority: High'
+      color: ee3f46
+      state: present
+    - name: 'Priority: Medium'
+      color: ee3f46
+      state: present
+    - name: 'Priority: Low'
+      color: ee3f46
+      state: present
+    - name: 'Status: In Progress'
+      color: 5ebeff
+      state: present
+    - name: 'Status: Accepted'
+      color: 5ebeff
+      state: present
+    - name: 'Status: Completed'
+      color: 5ebeff
+      state: present
+    - name: 'Status: Revision Needed'
+      color: 5ebeff
+      state: present
+    - name: 'Status: Help Wanted'
+      color: 5ebeff
+      state: present
+    - name: 'Status: Info Needed'
+      color: 5ebeff
+      state: present
+    - name: 'Discussion'
+      color: fbca04
+      state: present

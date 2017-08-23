@@ -1,0 +1,59 @@
+{
+  "name": "@box-maker/hapi-route-logging",
+  "version": "0.1.0",
+  "description": "A simple plugin to print on screen the routes consulted, ideal during development.",
+  "main": "lib/index.js",
+  "xo": {
+    "space": true
+  },
+  "scripts": {
+    "lint": "xo --ignore lib/*.* --env=mocha",
+    "transpile": "babel src --out-dir lib --source-maps",
+    "pretest": "npm run lint && npm run transpile",
+    "watch": "",
+    "test": "mocha ./test/test.js",
+    "coverage": ""
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/box-maker/hapi-route-logging.git"
+  },
+  "author": {
+    "name": "Alejandro Alvarez",
+    "email": "eliluminado00@gmail.com",
+    "url": "https://github.com/eliluminado"
+  },
+  "license": "MPL-2.0",
+  "bugs": {
+    "url": "https://github.com/box-maker/hapi-route-logging/issues"
+  },
+  "homepage": "https://github.com/box-maker/hapi-route-logging",
+  "engines": {
+    "node": ">=4.8.0"
+  },
+  "keywords": [
+    "hapi",
+    "plugin",
+    "hapi-plugin",
+    "routes",
+    "logging",
+    "console"
+  ],
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.0",
+    "chai": "^4.1.1",
+    "coveralls": "^2.13.1",
+    "github-sync-labels-milestones": "^0.3.1",
+    "hapi": "^16.5.2",
+    "mocha": "^3.5.0",
+    "mocha-lcov-reporter": "^1.3.0",
+    "xo": "^0.18.2"
+  },
+  "dependencies": {
+    "chalk": "^2.1.0"
+  },
+  "peerDependencies": {
+    "hapi": ">=13.0.0"
+  }
+}
