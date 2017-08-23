@@ -2,6 +2,8 @@
 
 import chalk from 'chalk';
 
+import packageJson from '../package.json';
+
 function register(server, options, next) {
   server.on('start', () => {
     console.log(`Server running at ${server.info.uri} with Hapi version ${server.version}`);
@@ -42,8 +44,7 @@ function register(server, options, next) {
 }
 
 register.attributes = {
-  name: 'hapi-route-logging',
-  version: '0.1.0'
+  pkg: packageJson
 };
 
 module.exports = register;
