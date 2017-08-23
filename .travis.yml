@@ -32,7 +32,7 @@ deploy:
       node: "4"
       tags: true
   - provider: script
-    script: github-sync-labels-milestones -t $GITHUB_TOKEN -c ./.github/labels.yml
+    script: github-sync-labels-milestones -t $GITHUB_TOKEN -c ./.github/labels.yml --verbose
     on:
       node: "6"
 

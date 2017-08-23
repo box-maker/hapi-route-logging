@@ -2,10 +2,10 @@
 - repositories:
     - box-maker/hapi-route-logging
   milestones:
-    - title: 1.0
+    - title: '1.0'
       state: open
       description: Tasks to be completed before release first stable version
-    - title: 2.0
+    - title: '2.0'
       state: open
       description: Place for future implementations
   labels:
@@ -56,4 +56,7 @@
       state: present
     - name: 'Discussion'
       color: fbca04
+      state: present
+    - name: 'greenkeeper'
+      color: 00c775
       state: present
