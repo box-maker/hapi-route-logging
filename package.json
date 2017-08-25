@@ -7,7 +7,14 @@
   },
   "main": "lib/index.js",
   "xo": {
-    "space": true
+    "space": true,
+    "rules": {
+      "no-warning-comments": "off",
+      "import/extensions": [2, {
+        "js": "never",
+        "json": "always"
+      }]
+    }
   },
   "scripts": {
     "lint": "xo --ignore lib/*.* --env=mocha",
