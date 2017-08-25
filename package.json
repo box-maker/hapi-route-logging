@@ -10,10 +10,13 @@
     "space": true,
     "rules": {
       "no-warning-comments": "off",
-      "import/extensions": [2, {
-        "js": "never",
-        "json": "always"
-      }]
+      "import/extensions": [
+        2,
+        {
+          "js": "never",
+          "json": "always"
+        }
+      ]
     }
   },
   "scripts": {
