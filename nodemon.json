@@ -1,0 +1,14 @@
+{
+  "restartable": "rs",
+  "verbose": false,
+  "events": {
+    "restart": "yarn run lint && yarn run transpile"
+  },
+  "watch": [
+    "src/"
+  ],
+  "env": {
+    "NODE_ENV": "development"
+  },
+  "ext": "js json"
+}

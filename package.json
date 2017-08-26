@@ -23,7 +23,7 @@
     "lint": "xo --ignore lib/*.* --env=mocha",
     "transpile": "babel src --out-dir lib --source-maps",
     "pretest": "npm run lint && npm run transpile",
-    "watch": "",
+    "watch": "nodemon --config nodemon.json examples/index.js",
     "test": "mocha ./test/test.js",
     "coverage": ""
   },
@@ -61,6 +61,7 @@
     "hapi": "^16.5.2",
     "mocha": "^3.5.0",
     "mocha-lcov-reporter": "^1.3.0",
+    "nodemon": "^1.11.0",
     "xo": "^0.18.2"
   },
   "dependencies": {
