@@ -16,7 +16,8 @@
           "js": "never",
           "json": "always"
         }
-      ]
+      ],
+      "import/prefer-default-export": "off"
     }
   },
   "scripts": {
