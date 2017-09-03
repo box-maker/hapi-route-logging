@@ -7,6 +7,10 @@
   },
   "main": "lib/index.js",
   "xo": {
+    "ignores": [
+      "lib/**/*.*",
+      "lib/*.*"
+    ],
     "space": true,
     "rules": {
       "no-warning-comments": "off",
