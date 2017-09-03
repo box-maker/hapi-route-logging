@@ -1,26 +1,56 @@
 'use strict';
 
 import chalk from 'chalk';
+import Joi from 'joi';
+import latestVersion from 'latest-version';
+import semver from 'semver';
 
 import packageJson from '../package.json';
+import {formatRoutes} from './route-list';
 
-function getRouteList() {
-  //
-}
+const optionsSchema = {
+  showRoutes: Joi.boolean().default(true),
+  showRoutesList: Joi.boolean().default(false),
+  checkUpgrade: Joi.boolean().default(false)
+};
 
 function register(server, options, next) {
-  server.on('start', () => {
-    console.log(`Server running at ${server.info.uri} with Hapi version ${server.version}`);
-    console.log(`Quit the server with ${chalk.italic.black.bgYellow('CONTROL-C')}.`);
-  });
-
-  if (options.showRoutesList) {
-    getRouteList();
+  const checkOptions = Joi.validate(options, optionsSchema);
+  if (checkOptions.error) {
+    throw checkOptions.error;
   }
+  options = checkOptions.value;
+
+  server.on('start', () => {
+    if (options.showRoutesList) {
+      formatRoutes(server);
+    }
+
+    console.log('\n');
+    const introMessage = `Server running at ${server.info.uri} with Hapi version`;
+    const quitText = 'CTRL-C';
+    const quitMessage = `Quit the server with ${chalk.bgYellow.black(quitText)}.`;
+    const serverHapiVersion = server.version;
+    if (options.checkUpgrade) {
+      latestVersion('hapi').then(version => {
+        if (semver.gt(version, serverHapiVersion)) {
+          console.log(`${introMessage} ${chalk.bgRed(serverHapiVersion)}`);
+          console.log(chalk.red(`\t Upgrade Hapi.js, latest version is ${version}`));
+        } else {
+          console.log(`${introMessage} ${serverHapiVersion}`);
+        }
+        console.log(quitMessage);
+      });
+    } else {
+      console.log(`${introMessage} ${serverHapiVersion}`);
+      console.log(quitMessage);
+    }
+  });
 
   if (options.showRoutes) {
     server.on('response', request => {
-      const date = new Date(request.server.info.created);
+      // TODO: Support multiple connections (https://hapijs.com/api#serverconnections)
+      const date = new Date(request.info.received);
       const dateText = `[${date.toLocaleDateString()} ${date.toLocaleTimeString()}]`;
 
       const infoText = chalk.green(`"${request.method.toUpperCase()} ${request.url.path}"`);
@@ -35,7 +65,7 @@ function register(server, options, next) {
           typeText = chalk.red('ERROR');
           errorText = request.response.source.message;
         } else {
-          typeText = chalk.blue('HTTP');
+          typeText = chalk.blue(server.info.protocol.toUpperCase());
         }
       } catch (err) {
         statusCode = '';
