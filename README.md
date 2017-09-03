@@ -15,10 +15,10 @@ A simple plugin to print on screen the routes consulted, ideal during developmen
   <a href="https://www.npmjs.com/package/@box-maker/hapi-route-logging">
     <img src="https://img.shields.io/npm/v/@box-maker/hapi-route-logging.svg" alt="Version">
   </a>
-  <a href="https://www.npmjs.com/package/@box-maker/hapi-route-logging">
+  <a href="https://nodejs.org/download/release/latest/">
     <img src="https://img.shields.io/node/v/@box-maker/hapi-route-logging.svg" alt="Node Minimum version">
   </a>
-  <a href="https://github.com/box-maker/hapi-route-logging">
+  <a href="https://github.com/sindresorhus/xo">
     <img src="https://img.shields.io/badge/code_style-XO-5ed9c7.svg" alt="XO code style">
   </a>
 </p>
@@ -108,7 +108,9 @@ With options
 ```javascript
 server.register({
   register: hapiRouteLogging,
-  options: {}
+  options: {
+    showRoutes: true
+  }
 }, err => {
   if (err) {
     throw err;
@@ -122,7 +124,10 @@ Loading multiple plugins
 server.register([
   {
     register: hapiRouteLogging,
-    options: {}
+    options: {
+      showRoutes: false,
+      showRoutesList: true
+    }
   },
   {
     register: otherPlugin,
@@ -139,6 +144,17 @@ server.register([
 
 The following options are available:
 
+#### showRoutes (Default: Enable)
+
+Enables the displayed information on the routes consulted
+
+#### showRoutesList (Default: Disabled)
+
+This display the routes table to console at startup
+
+#### checkUpgrade (Default: Disabled)
+
+Verify that the latest version of Hapi is being used
 
 ## Development
 
