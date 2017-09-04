@@ -1,0 +1,23 @@
+[main]
+host = https://www.transifex.com
+
+# [hapi-route-logging.README]
+# source_file=README.md
+# source_lang=en
+# file_filter=translations/README-<lang>.md
+# type=GITHUBMARKDOWN
+# minimum_perc=85
+
+# [hapi-route-logging.CHANGELOG]
+# source_file=CHANGELOG.md
+# source_lang=en
+# file_filter=translations/CHANGELOG-<lang>.md
+# type=GITHUBMARKDOWN
+# minimum_perc=85
+
+[hapi-route-logging.translation]
+source_file=src/locales/en/translation.json
+source_lang=en
+file_filter=src/locales/<lang>/translation.json
+type=KEYVALUEJSON
+minimum_perc=85

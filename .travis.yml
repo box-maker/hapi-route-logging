@@ -19,6 +19,14 @@ script:
   - yarn run lint
   # - yarn test
   # - yarn run coverage
+  - tx init --token=$TRANSIFEX_TOKEN --host=www.transifex.com
+
+after_success:
+  - apt-get update -qq
+  - apt-get install python3
+  - curl -O https://bootstrap.pypa.io/get-pip.py
+  - python3 get-pip.py
+  - pip3 install git+https://github.com/transifex/transifex-client.git
 
 deploy:
   - provider: npm
@@ -30,6 +38,10 @@ deploy:
       tags: true
   - provider: script
     script: github-sync-labels-milestones -t $GITHUB_TOKEN -c ./.github/labels.yml --verbose
+    on:
+      node: "6"
+  - provider: script
+    script: tx push -s
     on:
       node: "6"
 
