@@ -1,6 +1,8 @@
 import columnify from 'columnify';
 import chalk from 'chalk';
 
+import {i18n} from './language';
+
 // TODO: Access info via web interface
 
 function getRouteList(server) {
@@ -33,6 +35,11 @@ function getRouteList(server) {
   return list;
 }
 
+function formatHeader(heading) {
+  const header = i18n.t(heading);
+  return chalk.blue.bold(header.toUpperCase());
+}
+
 function formatRoutes(server) {
   const listRoutes = getRouteList(server);
   listRoutes.forEach(route => {
@@ -54,10 +61,12 @@ function formatRoutes(server) {
         }
       },
       headingTransform: heading => {
-        return chalk.blue.bold(heading.toUpperCase());
+        return formatHeader(heading);
       }
     });
-    console.log(`URI: ${chalk.underline.cyan(route.uri)} - Labels: ${chalk.gray(route.labels)}`);
+    console.log(
+      `${i18n.t('URI')}: ${chalk.underline.cyan(route.uri)} - ${i18n.t('Labels')}: ${chalk.gray(route.labels)}`
+    );
     console.log(columns);
   }, this);
 }

@@ -7,11 +7,13 @@ import semver from 'semver';
 
 import packageJson from '../package.json';
 import {formatRoutes} from './route-list';
+import {i18n} from './language';
 
 const optionsSchema = {
   showRoutes: Joi.boolean().default(true),
   showRoutesList: Joi.boolean().default(false),
-  checkUpgrade: Joi.boolean().default(false)
+  checkUpgrade: Joi.boolean().default(false),
+  language: Joi.string()
 };
 
 function register(server, options, next) {
@@ -21,21 +23,25 @@ function register(server, options, next) {
   }
   options = checkOptions.value;
 
+  if (options.language !== undefined) {
+    i18n.changeLanguage(options.language);
+  }
+
   server.on('start', () => {
     if (options.showRoutesList) {
       formatRoutes(server);
     }
 
     console.log('\n');
-    const introMessage = `Server running at ${server.info.uri} with Hapi version`;
+    const introMessage = i18n.t('introMessage', {uri: server.info.uri});
     const quitText = 'CTRL-C';
-    const quitMessage = `Quit the server with ${chalk.bgYellow.black(quitText)}.`;
+    const quitMessage = `${i18n.t('quitMessage')} ${chalk.bgYellow.black(quitText)}.`;
     const serverHapiVersion = server.version;
     if (options.checkUpgrade) {
       latestVersion('hapi').then(version => {
         if (semver.gt(version, serverHapiVersion)) {
           console.log(`${introMessage} ${chalk.bgRed(serverHapiVersion)}`);
-          console.log(chalk.red(`\t Upgrade Hapi.js, latest version is ${version}`));
+          console.log(chalk.red(`\t ${i18n.t('upgradeHapi')} ${version}`));
         } else {
           console.log(`${introMessage} ${serverHapiVersion}`);
         }
