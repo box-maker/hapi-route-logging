@@ -1,0 +1,10 @@
+{
+  "introMessage": "Server running at {{- uri}} with Hapi version",
+  "quitMessage": "Quit the server with",
+  "upgradeHapi": "Upgrade Hapi.js, latest version is",
+  "URI": "URI",
+  "Labels": "Labels",
+  "method": "method",
+  "path": "path",
+  "description": "description"
+}

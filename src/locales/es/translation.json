@@ -1,0 +1,9 @@
+{
+  "introMessage": "Servidor corriendo en {{- uri}} con Hapi en su version",
+  "upgradeHapi": "Actualiza Hapi.js, la ultima versión es",
+  "URI": "URI",
+  "Labels": "Etiquetas",
+  "method": "metodo",
+  "path": "ruta",
+  "description": "descripción"
+}
