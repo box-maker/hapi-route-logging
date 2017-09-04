@@ -30,7 +30,8 @@
     "pretest": "npm run lint && npm run transpile",
     "watch": "nodemon --config nodemon.json examples/index.js",
     "test": "mocha ./test/test.js",
-    "coverage": ""
+    "coverage": "",
+    "translations": "node tasks.js translations"
   },
   "repository": {
     "type": "git",
@@ -62,18 +63,23 @@
     "babel-preset-env": "^1.6.0",
     "chai": "^4.1.1",
     "coveralls": "^2.13.1",
+    "fs-extra": "^4.0.1",
     "github-sync-labels-milestones": "^0.3.1",
     "hapi": "^16.5.2",
     "mocha": "^3.5.0",
     "mocha-lcov-reporter": "^1.3.0",
     "nodemon": "^1.11.0",
-    "xo": "^0.18.2"
+    "xo": "^0.18.2",
+    "yargs": "^8.0.2"
   },
   "dependencies": {
     "chalk": "^2.1.0",
     "columnify": "^1.5.4",
+    "i18next": "^9.0.0",
+    "i18next-sync-fs-backend": "^1.0.0",
     "joi": "^10.6.0",
     "latest-version": "^3.1.0",
+    "os-locale": "^2.1.0",
     "semver": "^5.4.1"
   },
   "peerDependencies": {
