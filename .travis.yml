@@ -19,7 +19,6 @@ script:
   - yarn run lint
   # - yarn test
   # - yarn run coverage
-  - tx init --token=$TRANSIFEX_TOKEN --host=www.transifex.com
 
 after_success:
   - apt-get update -qq
@@ -27,6 +26,7 @@ after_success:
   - curl -O https://bootstrap.pypa.io/get-pip.py
   - python3 get-pip.py
   - pip3 install git+https://github.com/transifex/transifex-client.git
+  - tx init --token=$TRANSIFEX_TOKEN --host=www.transifex.com
 
 deploy:
   - provider: npm
