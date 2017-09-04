@@ -156,6 +156,10 @@ This display the routes table to console at startup
 
 Verify that the latest version of Hapi is being used
 
+#### language (Default: undefined)
+
+Disables automatic language detection and uses this argument to set it
+
 ## Development
 
 Dependencies |
