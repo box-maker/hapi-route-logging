@@ -7,6 +7,6 @@
   "env": {
     "NODE_ENV": "development"
   },
-  "exec": "yarn run lint && yarn run transpile && node",
+  "exec": "yarn run lint && yarn run transpile && yarn run translations && node",
   "ext": "js json"
 }
