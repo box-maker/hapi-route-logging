@@ -47,7 +47,7 @@
   },
   "homepage": "https://github.com/box-maker/hapi-route-logging",
   "engines": {
-    "node": ">=4.8.0"
+    "node": ">=6.0.0"
   },
   "keywords": [
     "hapi",
