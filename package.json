@@ -70,7 +70,7 @@
     "xo": "^0.18.2"
   },
   "dependencies": {
-    "chalk": "^2.1.0",
+    "chalk": "^4.0.0",
     "columnify": "^1.5.4",
     "joi": "^11.0.0",
     "latest-version": "^3.1.0",
